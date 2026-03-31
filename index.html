@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAD V 2026 - Discipulado Oficial</title>
+    <title>MAD V 2024 - Discipulado</title>
     <style>
         :root { --blue-field: #eaf4ff; --blue-border: #3498db; --text: #2c3e50; }
         body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text); background-color: #f4f7f6; margin: 0; padding: 10px; }
         .container { max-width: 600px; margin: auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-        .input-blue { width: 100%; background-color: var(--blue-field); border: 2px solid var(--blue-border); border-radius: 6px; padding: 12px; box-sizing: border-box; font-size: 16px; margin: 10px 0; display: block; }
+        .input-blue { width: 100%; background-color: var(--blue-field); border: 2px solid var(--blue-border); border-radius: 6px; padding: 12px; box-sizing: border-box; font-size: 16px; margin: 10px 0; display: block; border: 2px solid var(--blue-border); }
         h1 { text-align: center; color: #1a5276; border-bottom: 3px solid var(--blue-border); padding-bottom: 10px; margin-top: 0; }
         h2 { color: #2980b9; margin-top: 35px; border-left: 6px solid var(--blue-border); padding-left: 12px; font-size: 1.4em; }
         .bible-ref { font-weight: bold; color: #c0392b; display: block; margin: 5px 0 10px 0; }
@@ -19,12 +19,25 @@
         table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; }
         td { border: 1px solid #bdc3c7; padding: 10px; text-align: center; width: 50%; font-size: 0.95em; }
         .footer { font-weight: bold; text-align: center; margin-top: 50px; padding: 25px; border-top: 2px solid #333; font-size: 0.95em; white-space: pre-line; }
+        
+        /* Botón de Guardar */
+        .btn-save { background-color: #27ae60; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 50px; cursor: pointer; display: block; margin: 30px auto; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3); transition: 0.3s; }
+        .btn-save:hover { background-color: #219150; transform: scale(1.05); }
+
+        /* Estilos para impresión (PDF) */
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; border: none; max-width: 100%; width: 100%; }
+            .btn-save { display: none; }
+            .input-blue { border: 1px solid #ccc; background: white; }
+            h2 { border-left: 4px solid #3498db; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>IGLECO</h1>
+    <h1>MAD V 2024</h1>
 
     <div style="display: flex; gap: 15px; margin-bottom: 25px;">
         <div style="flex: 2;">Nombre: <input type="text" id="nombre" class="input-blue" style="margin:0;"></div>
@@ -111,12 +124,12 @@
     <h2>6. Soy un hijo amado de Dios</h2>
     <span class="bible-ref">Juan 1:12</span>
     <p>Soy una nueva persona, nací de nuevo. Con el “ nuevo nacimiento ” una persona nace de nuevo espiritualmente. Su corazón (o espíritu) es “ recreado ” por Dios. Es decir, su espíritu ahora está conectado con Dios.</p>
-    <p>Otra manera de explicar esto es: cuando su espíritu o corazón nace de nuevo, Dios le da una nueva naturaleza . Este nuevo corazón lo coloca en una posición de hijo en su relación con Dios - Padre . Es trasladado realmente o adoptado en la familia de Dios.</p>
+    <p>Otra manera de explicar esto es: cuando su espíritu o corazón nace de nuevo, Dios le da una nueva naturaleza. Este nuevo corazón lo coloca en una posición de hijo en su relación con Dios - Padre. Es trasladado realmente o adoptado en la familia de Dios.</p>
     <span class="bible-ref">Col. 1:12-13 / 2 Co. 5:17</span>
     <textarea id="ans6" class="input-blue" rows="4"></textarea>
 
     <h2>7. Salvación</h2>
-    <p>En el evangelio es una palabra que incluye TODO : perdón de pecados, vida eterna, protección, justicia; salud divina, ayuda, bienestar, seguridad, victoria, libertad, preservación de la vida. Una completa y total redención de toda maldición incluyendo la muerte. La salvación es un regalo. Los regalos no se pagan, solo se reciben. No hay algo que podamos hacer para merecer ese regalo. Juan 3:16</p>
+    <p>En el evangelio es una palabra que incluye TODO: perdón de pecados, vida eterna, protección, justicia; salud divina, ayuda, bienestar, seguridad, victoria, libertad, preservación de la vida. Una completa y total redención de toda maldición incluyendo la muerte. La salvación es un regalo. Los regalos no se pagan, solo se reciben. No hay algo que podamos hacer para merecer ese regalo. Juan 3:16</p>
     <textarea id="ans7" class="input-blue" rows="3"></textarea>
 
     <h2>8. Creer, Confesar y Recibir</h2>
@@ -138,6 +151,8 @@
         Guiados por el Espíritu Santo.
         Dios lo dijo, yo lo creo y eso es suficiente.
     </div>
+
+    <button class="btn-save" onclick="window.print()">📥 Guardar como PDF</button>
 </div>
 
 <script>
